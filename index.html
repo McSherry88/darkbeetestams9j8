@@ -18,6 +18,13 @@ colorManagement: true;
 physicallyCorrectLights: true;
 alpha: false;
             arjs="sourceType: webcam; debugUIEnabled: false;"
+                 loader.load( "/asset.gltf", 
+    function ( gltf ) {
+        gltf.scene.position.set(0, -1.5, -2);
+        const model = gltf.scene.children[6];
+        model.children[0].material.metalness = 0;
+        model.children[1].material.metalness = 0;
+        scene.add(model);
         >
             <a-assets>
                 <a-asset-item
